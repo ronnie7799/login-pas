@@ -1,69 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-<title>LOG IN</title>
-<style>
-  body {
-    font-family : Arial, sans-serif;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-  }
+<head>
+  <meta charset="UTF-8">
+  <title>LOG IN</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
 
-login-container {
-    background-color: blue;
-    padding: 30px;
-    border-radius: 7px;
-    box-shadow: 0 4px rgba(0, 0, 0, 0.1);
-}
-input {
-  display: block;
-  margin: 10px 0;
-  padding: 10px;
-  width: 250px;
-}
-button{
-  padding: 10px;
-  width: 100%;
-  background-color: #4CAF50;
-  color: deeppink;
-  border: none;
-  cursor: pointer;
-  }
-  .error {
-    color: darkred;
-    margin-top: 15px;
-  }
-</style>
-  <head>
-    <body>
-      <div class="login-container">
-        <h2>Log In</h2>
-        <form id="loginForm">
-          <input type="text" id="username" placeholder="Username" required>
-          <input type="password" id="password" placeholder="Password" required>
-          <button type="submit">LOG IN</button>
-        </form>
-        <div class="error" id="errorMessage"></div>
-      </div>
+    .login-container {
+      background-color: blue;
+      padding: 30px;
+      border-radius: 7px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      color: white;
+    }
 
-      <script>
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-          event.preventDefault();
-          const username = document.getElementById('username').value;
-          const password = document.getElementById('password').value;
-          const errorMessage = document.getElementById('errorMessage');
+    input {
+      display: block;
+      margin: 10px 0;
+      padding: 10px;
+      width: 250px;
+    }
 
-          if (username === 'shoxsulton.7' && password === 'passwor12345678') {
-            window.location.href = 'Matritsaga xush kelibsan';
-          } else {
-            errorMessage.textContent = 'Parol yoki username xato';
-          }
-        });
-   <script>
-    </body>
+    button {
+      padding: 10px;
+      width: 100%;
+      background-color: #4CAF50;
+      color: deeppink;
+      border: none;
+      cursor: pointer;
+    }
+
+    .error {
+      color: yellow;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Log In</h2>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Username" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <button type="submit">LOG IN</button>
+    </form>
+    <div class="error" id="errorMessage"></div>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const errorMessage = document.getElementById('errorMessage');
+
+      if (username === 'shoxsulton.7' && password === 'passwor12345678') {
+        window.location.href = 'welcome.html'; // Matritsaga sahifaga o'tish
+      } else {
+        errorMessage.textContent = 'Parol yoki username xato';
+      }
+    });
+  </script>
+</body>
 </html>
+
